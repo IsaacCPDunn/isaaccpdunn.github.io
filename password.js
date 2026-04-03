@@ -1,8 +1,8 @@
 window.onload = function() {
     document.getElementById("generate").onclick = function() {
         const chars = document.getElementById("chars").value;
-        const min = document.getElementById("min").value;
-        const max = document.getElementById("max").value;
+        const min = parseInt(document.getElementById("min").value);
+        const max = parseInt(document.getElementById("max").value);
         const length = Math.floor(Math.random() * (max - min + 1) + min);
         let password = "";
         while (password.length < length) {
