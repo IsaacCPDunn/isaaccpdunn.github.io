@@ -5,7 +5,7 @@ window.onload = function() {
         const max = parseInt(document.getElementById("max").value);
         const length = Math.floor(Math.random() * (max - min + 1) + min);
         let password = "";
-        while (password.length < length) {
+        for (let i = 0; i < length; i++) {
             password += chars.charAt(Math.floor(Math.random() * chars.length));
         }
         document.getElementById("password").value = password;
