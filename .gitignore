@@ -1,0 +1,14 @@
+*
+.*
+!.gitignore
+!.github
+!.github/*
+!.github/.*
+!*.html
+!*.css
+!*.js
+!*.py
+!**/*.html
+!**/*.css
+!**/*.js
+!**/*.py
