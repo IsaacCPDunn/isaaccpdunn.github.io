@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PyApp Test Clock</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Hello, world 👋</h1>
+      <p>This clock is synced to the server's system timezone (not UTC).</p>
+
+      <div class="clock-wrap">
+        <span id="clock" aria-live="polite">Loading time...</span>
+        <small id="tz">Timezone: {{ timezone_name }}</small>
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
