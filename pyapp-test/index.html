@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PyApp Test Clock</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Hello, world 👋</h1>
+      <p>This GitHub Pages version shows your browser's local time.</p>
+
+      <div class="clock-wrap">
+        <span id="clock" aria-live="polite">Loading time...</span>
+        <small id="tz">Timezone: Loading...</small>
+      </div>
+    </main>
+
+    <script>
+      const clockEl = document.getElementById("clock");
+      const tzEl = document.getElementById("tz");
+
+      function refreshTime() {
+        const now = new Date();
+        clockEl.textContent = now.toLocaleString();
+
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "Local";
+        const offsetMinutes = -now.getTimezoneOffset();
+        const sign = offsetMinutes >= 0 ? "+" : "-";
+        const hours = String(Math.floor(Math.abs(offsetMinutes) / 60)).padStart(2, "0");
+        const minutes = String(Math.abs(offsetMinutes) % 60).padStart(2, "0");
+        tzEl.textContent = `Timezone: ${timezone} (UTC${sign}${hours}:${minutes})`;
+      }
+
+      refreshTime();
+      setInterval(refreshTime, 1000);
+    </script>
+  </body>
+</html>
