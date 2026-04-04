@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proxy Viewer</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <h1>Proxy Viewer</h1>
+      <p>
+        Enter a URL to fetch and inspect page content through this Flask app.
+        This is a basic viewer for testing and debugging.
+      </p>
+
+      <form id="proxy-form">
+        <input id="url" name="url" type="url" placeholder="https://example.com" required />
+        <button type="submit">Load</button>
+      </form>
+
+      <section id="meta" class="meta"></section>
+      <pre id="content" class="content">No content loaded yet.</pre>
+    </main>
+
+    <script src="./static/app.js"></script>
+  </body>
+</html>
