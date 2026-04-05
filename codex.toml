@@ -1,0 +1,42 @@
+# codex.toml
+#
+# This file documents common Codex CLI/runtime settings using default values.
+# Adjust these manually as needed for your local workflow.
+
+[model]
+# Model identifier used for code-focused tasks.
+name = "gpt-5-codex"
+
+[execution]
+# Sandbox mode controls filesystem/process isolation.
+sandbox_mode = "danger-full-access"
+
+# Approval policy decides when user confirmation is required.
+approval_policy = "never"
+
+# Network access toggle for commands that require internet.
+network_access = true
+
+[shell]
+# Default shell binary used by command execution.
+program = "bash"
+
+# Launch shell with login semantics (-l) by default.
+login = true
+
+[tools]
+# Enable web browsing/search tools when available.
+web = true
+
+# Enable local patch editing helper.
+apply_patch = true
+
+# Enable command execution helper.
+exec_command = true
+
+[output]
+# Default verbosity profile for assistant responses.
+verbosity = "medium"
+
+# Emit markdown-formatted answers.
+markdown = true
